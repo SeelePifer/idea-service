@@ -11,10 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackageClasses = IdeaController.class)
-@ComponentScan(basePackageClasses = IdeaMapper.class)
 @ComponentScan(basePackageClasses = IdeaService.class)
 @ComponentScan(basePackageClasses = IdeaRepository.class)
 @ComponentScan(basePackageClasses = RabbitMQProducer.class)
+@ComponentScan(basePackageClasses = IdeaMapper.class)
 public class IdeaserviceApplication {
 
     public static void main(String[] args) {

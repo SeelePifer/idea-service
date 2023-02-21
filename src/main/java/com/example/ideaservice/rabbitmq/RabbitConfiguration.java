@@ -15,6 +15,7 @@ import org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler
 import org.springframework.amqp.rabbit.support.ListenerExecutionFailedException;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +24,7 @@ import org.springframework.util.ErrorHandler;
 @EnableRabbit
 @Configuration
 public class RabbitConfiguration {
-
+    
     @Value("${rabbitmq.queue}")
     private String queueName;
     @Value("${rabbitmq.exchange}")
@@ -71,7 +72,7 @@ public class RabbitConfiguration {
         return connectionFactory;
     }
     @Bean
-    public AmqpTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setDefaultReceiveQueue(queueName);
         rabbitTemplate.setMessageConverter(jsonMessageConverter());

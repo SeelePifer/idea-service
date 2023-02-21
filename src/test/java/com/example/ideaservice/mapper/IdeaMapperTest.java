@@ -28,5 +28,6 @@ public class IdeaMapperTest {
 
         assertEquals(ideaRecord.description(), idea.getDescription());
         assertEquals(ideaRecord.id(), idea.getId());
+
     }
 }

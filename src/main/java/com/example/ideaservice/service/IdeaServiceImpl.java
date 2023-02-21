@@ -15,8 +15,7 @@ public class IdeaServiceImpl implements IdeaService {
 
     private final IdeaRepository ideaRepository;
 
-    @Autowired
-    private  IdeaMapper mapper;
+    private IdeaMapper mapper;
 
     public IdeaServiceImpl(IdeaRepository ideaRepository) {
         this.ideaRepository = ideaRepository;

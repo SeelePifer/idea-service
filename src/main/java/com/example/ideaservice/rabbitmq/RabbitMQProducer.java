@@ -23,6 +23,7 @@ public class RabbitMQProducer implements Producer {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
+
     public RabbitMQProducer(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }

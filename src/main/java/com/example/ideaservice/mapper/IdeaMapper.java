@@ -4,10 +4,11 @@ import com.example.ideaservice.model.Idea;
 import com.example.ideaservice.record.IdeaRecord;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.stereotype.Service;
 
 
-
-@Mapper
+@Service
+@Mapper(componentModel = "spring")
 public interface IdeaMapper {
 
     @Mapping(target = "id", source = "entity.id")

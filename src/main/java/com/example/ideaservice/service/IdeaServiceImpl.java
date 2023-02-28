@@ -4,21 +4,22 @@ import com.example.ideaservice.mapper.IdeaMapper;
 import com.example.ideaservice.model.Idea;
 import com.example.ideaservice.record.IdeaRecord;
 import com.example.ideaservice.repository.IdeaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @Service
 public class IdeaServiceImpl implements IdeaService {
 
     private final IdeaRepository ideaRepository;
 
-    private IdeaMapper mapper;
+    private final IdeaMapper mapper;
 
-    public IdeaServiceImpl(IdeaRepository ideaRepository) {
+    public IdeaServiceImpl(IdeaRepository ideaRepository, IdeaMapper mapper) {
         this.ideaRepository = ideaRepository;
+        this.mapper = mapper;
     }
 
 

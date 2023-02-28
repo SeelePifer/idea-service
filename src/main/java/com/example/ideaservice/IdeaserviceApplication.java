@@ -14,7 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackageClasses = IdeaService.class)
 @ComponentScan(basePackageClasses = IdeaRepository.class)
 @ComponentScan(basePackageClasses = RabbitMQProducer.class)
-@ComponentScan(basePackageClasses = IdeaMapper.class)
+@ComponentScan("com.example.ideaservice.mapper")
 public class IdeaserviceApplication {
 
     public static void main(String[] args) {
